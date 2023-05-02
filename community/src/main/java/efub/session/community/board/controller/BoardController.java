@@ -19,7 +19,7 @@ public class BoardController {
 
     // 게시판 생성 (POST)
     @PostMapping
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.CREATED)
     public BoardResponseDto createBoard(@RequestBody @Valid final BoardCreateRequestDto requestDto) {
         return new BoardResponseDto(boardService.createBoard(requestDto));    // 새로 만든 게시판의 정보를 Dto 객체로 만들어 리턴
     }
