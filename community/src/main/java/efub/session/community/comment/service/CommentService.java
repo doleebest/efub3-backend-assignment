@@ -31,7 +31,7 @@ public class CommentService {
     // 댓글 작성
     public Long createComment(Long postId, CommentRequestDto requestDto) {
         Post post = postService.findPost(postId);
-        Member writer = memberService.findMemberById(requestDto.getAccountId());
+        Member writer = memberService.findMemberById(requestDto.getMemberId());
         return commentRepository.save(requestDto.toEntity(post, writer)).getCommentId();
     }
 

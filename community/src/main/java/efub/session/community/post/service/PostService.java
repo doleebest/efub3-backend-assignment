@@ -24,7 +24,7 @@ public class PostService {
     @Transactional
     public Post addPost(PostRequestDto requestDto) {
 
-        Member writer = accountRepository.findById(requestDto.getAccountID())
+        Member writer = accountRepository.findById(requestDto.getMemberID())
                         .orElseThrow(()-> new IllegalAccessError("존재하지 않는 계정입니다."));
         return postRepository.save(
                 Post.builder()
@@ -44,14 +44,14 @@ public class PostService {
                 .orElseThrow(()-> new IllegalArgumentException("존재하지 않는 게시글입니다."));
     }
 
-    public void removePost(Long postId, Long accountId) {
-        Post post = postRepository.findByPostIdAndWriter_AccountId(postId, accountId)
+    public void removePost(Long postId, Long memberId) {
+        Post post = postRepository.findByPostIdAndWriter_MemberId(postId, memberId)
                 .orElseThrow(()->new IllegalArgumentException("잘못된 접근입니다."));
         postRepository.delete(post);
     }
 
     public Post modifyPost(Long postId, PostModifyRequestDto requestDto) {
-        Post post = postRepository.findByPostIdAndWriter_AccountId(postId, requestDto.getAccountId())
+        Post post = postRepository.findByPostIdAndWriter_MemberId(postId, requestDto.getMemberId())
                 .orElseThrow(()->new IllegalArgumentException("잘못된 접근입니다."));
         post.updatePost(requestDto);
         return post;

@@ -47,10 +47,10 @@ public class PostController {
         return new PostResponseDto(post);
     }
 
-    @DeleteMapping("/{postId}/{accountId}")
+    @DeleteMapping("/{postId}/{memberId}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String postRemove(@PathVariable Long postId, @RequestParam Long accountId){
-        postService.removePost(postId, accountId);
+    public String postRemove(@PathVariable Long postId, @RequestParam Long memberId){
+        postService.removePost(postId, memberId);
         return "성공적으로 삭제되었습니다.";
     }
 

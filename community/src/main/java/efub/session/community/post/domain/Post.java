@@ -25,7 +25,7 @@ public class Post extends BaseTimeEntity {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "member_id")
     private Member writer; // 난 멤버로 함.. // 이 post를 글쓴이
 
     @Builder

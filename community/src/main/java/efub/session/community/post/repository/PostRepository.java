@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
-    Optional<Post> findByPostIdAndWriter_AccountId(Long postId, Long accountId); // POST로 접근하는 매개체, pk 타입이 long
+    Optional<Post> findByPostIdAndWriter_MemberId(Long postId, Long memberId); // POST로 접근하는 매개체, pk 타입이 long
 
     List<Post> findAllByWriter(Member member);
 }

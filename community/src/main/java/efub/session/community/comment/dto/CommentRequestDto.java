@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class CommentRequestDto {
 
     @NotNull(message = "작성자 ID를 입력해주세요.")
-    private Long accountId;
+    private Long memberId;
 
     @NotNull(message = "내용을 입력해주세요.")
     private String content;

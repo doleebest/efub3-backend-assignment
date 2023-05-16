@@ -6,7 +6,7 @@ import lombok.Getter;
 
 
 public class PostRequestDto {
-    private Long accountID;
+    private Long memberID;
     private String title;
     private String content;
 }
