@@ -25,7 +25,7 @@ public class MemberService {
     }
 
     @Transactional(readOnly = true)
-    public boolean existsByEmail(String email){
+    public boolean existsByEmail(String email) {
         return memberRepository.existsByEmail(email);
     }
 
@@ -38,7 +38,7 @@ public class MemberService {
     public Long update(Long memberId, MemberUpdateRequestDto requestDto){
         Member member = findMemberById(memberId);
         member.updateMember(requestDto.getNickname());
-        return member.getMemberId();
+        return memberId;
     }
 
     public void withdraw(Long memberId){

@@ -30,7 +30,7 @@ public class CommentService {
 
     // 댓글 작성
     public Long createComment(Long postId, CommentRequestDto requestDto) {
-        Post post = postService.findPostById(postId);
+        Post post = postService.findPost(postId);
         Member writer = memberService.findMemberById(requestDto.getAccountId());
         return commentRepository.save(requestDto.toEntity(post, writer)).getCommentId();
     }
@@ -51,7 +51,7 @@ public class CommentService {
     // 댓글 목록 조회 - 게시글별
     @Transactional(readOnly = true)
     public List<Comment> findCommentListByPost(Long postId) {
-        Post post = postService.findPostById(postId);
+        Post post = postService.findPost(postId);
         return commentRepository.findAllByPost(post);
     }
 

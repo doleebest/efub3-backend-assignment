@@ -3,6 +3,7 @@ package efub.session.community.post.service;
 import efub.session.community.account.domain.Member;
 import efub.session.community.account.dto.PostModifyRequestDto;
 import efub.session.community.account.repository.MemberRepository;
+import efub.session.community.account.service.MemberService;
 import efub.session.community.post.domain.Post;
 import efub.session.community.post.dto.PostRequestDto;
 import efub.session.community.post.repository.PostRepository;
@@ -18,6 +19,7 @@ public class PostService {
 
     private final PostRepository postRepository; // service는 repository만 봄
     private final MemberRepository accountRepository;
+    private final MemberService memberService;
 
     @Transactional
     public Post addPost(PostRequestDto requestDto) {
@@ -54,4 +56,11 @@ public class PostService {
         post.updatePost(requestDto);
         return post;
     }
+
+
+    public List<Post> findPostListByWriter(Long memberId) {
+        Member member = memberService.findMemberById(memberId);
+        return postRepository.findAllByWriter(member);
+    }
+
 }
