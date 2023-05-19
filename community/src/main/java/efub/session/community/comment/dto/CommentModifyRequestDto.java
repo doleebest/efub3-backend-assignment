@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class CommentModifyRequestDto {
 
     private String content;
+    private Long memberId;
 
     @Builder
     public CommentModifyRequestDto (String content) {

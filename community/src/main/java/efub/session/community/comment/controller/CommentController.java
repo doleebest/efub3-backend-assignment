@@ -41,4 +41,20 @@ public class CommentController {
         commentService.deleteComment(commentId, memberId);
         return "성공적으로 삭제가 완료되었습니다.";
     }
+
+    //댓글에 좋아요 생성
+    @PostMapping("/hearts")
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public String createCommentHeart(@PathVariable final Long commentId, @RequestBody final MemberInfoRequestDto requestDto){
+        commentHeartService.create(commentId,requestDto);
+        return "좋아요를 눌렀습니다.";
+    }
+
+    //댓글에 좋아요 취소
+    @DeleteMapping("/hearts")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String deleteCommentHeart(@PathVariable final Long commentId, @RequestParam final  Long memberId){
+        commentHeartService.delete(commentId,memberId);
+        return "좋아요가 취소되었습니다.";
+    }
 }

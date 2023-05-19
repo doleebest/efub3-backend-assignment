@@ -26,6 +26,7 @@ public class CommentService {
     // 의존관계 : CommentService -> PostService
     private final PostService postService;
     // 의존관계 : CommentService -> AccountService
+    private final CommentService commentService;
     private final MemberService memberService;
 
     // 댓글 작성
@@ -66,4 +67,6 @@ public class CommentService {
         Comment comment = commentRepository.findByCommentIdAndAndWriter_MemberId(commentId, memberId);
         commentRepository.delete(comment);
     }
+
+
 }
