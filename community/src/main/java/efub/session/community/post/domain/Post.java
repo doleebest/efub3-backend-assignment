@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.xml.stream.events.Comment;
+import java.awt.*;
+import java.util.ArrayList;
 
 @Entity
 @NoArgsConstructor
@@ -27,6 +30,10 @@ public class Post extends BaseTimeEntity {
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member writer; // 난 멤버로 함.. // 이 post를 글쓴이
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Comment> commentList=new ArrayList<>();
+
 
     @Builder
     public Post(Long postId, String title, String content, Member writer) {

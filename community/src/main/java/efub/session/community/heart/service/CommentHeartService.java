@@ -1,11 +1,12 @@
-package efub.session.community.comment.service;
+package efub.session.community.heart.service;
 
 import efub.session.community.comment.domain.Comment;
 import efub.session.community.comment.domain.CommentHeart;
 import efub.session.community.comment.repository.CommentHeartRepository;
 import efub.session.community.account.domain.Member;
-import efub.session.community.account.dto.MemberInfoRequestDto;
+import efub.session.community.account.dto.MemberUpdateRequestDto;
 import efub.session.community.account.service.MemberService;
+import efub.session.community.comment.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class CommentHeartService {
 
 
     // 댓글 좋아요 생성
-    public void create(Long commmentId, MemberInfoRequestDto requestDto){
+    public void create(Long commmentId, MemberUpdateRequestDto requestDto){
         Member member=memberService.findMemberById(requestDto.getMemberId());
         Comment comment=commentService.findCommentById(commmentId);
         if(isExistsByWriterAndComment(member,comment)){
