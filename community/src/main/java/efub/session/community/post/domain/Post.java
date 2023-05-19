@@ -11,6 +11,8 @@ import javax.persistence.*;
 import javax.xml.stream.events.Comment;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @NoArgsConstructor

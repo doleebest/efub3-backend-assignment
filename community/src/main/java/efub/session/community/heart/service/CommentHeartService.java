@@ -1,7 +1,7 @@
 package efub.session.community.heart.service;
 
 import efub.session.community.comment.domain.Comment;
-import efub.session.community.comment.domain.CommentHeart;
+import efub.session.community.heart.domain.CommentHeart;
 import efub.session.community.comment.repository.CommentHeartRepository;
 import efub.session.community.account.domain.Member;
 import efub.session.community.account.dto.MemberUpdateRequestDto;

@@ -5,6 +5,7 @@ import efub.session.community.comment.domain.Comment;
 import efub.session.community.comment.dto.CommentModifyRequestDto;
 import efub.session.community.comment.dto.CommentResponseDto;
 import efub.session.community.comment.service.CommentService;
+import efub.session.community.heart.service.CommentHeartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
