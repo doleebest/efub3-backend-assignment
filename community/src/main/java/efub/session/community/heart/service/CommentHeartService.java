@@ -31,7 +31,7 @@ public class CommentHeartService {
             throw new RuntimeException("이미 좋아요를 눌렀습니다.");
         }
 
-        CommentHeart commentHeart=CommentHeart.builder()
+        CommentHeart commentHeart = CommentHeart.builder()
                 .comment(comment)
                 .member(member)
                 .build();

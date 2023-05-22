@@ -10,12 +10,13 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberUpdateRequestDto {
-    @NotBlank(message = "닉네임은 필수값입니다.")
-    private String nickname;
+
+    @NotBlank(message = "작성자는 필수값입니다.")
+    private Long memberId;
 
     @Builder
-    public MemberUpdateRequestDto(String nickname){
-        this.nickname = nickname;
+    public MemberUpdateRequestDto(Long memberId){
+        this.memberId = getMemberId();
     }
 
 }

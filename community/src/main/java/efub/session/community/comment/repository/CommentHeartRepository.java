@@ -1,7 +1,7 @@
 package efub.session.community.comment.repository;
 
 import efub.session.community.comment.domain.Comment;
-import efub.session.community.comment.domain.CommentHeart;
+import efub.session.community.heart.domain.CommentHeart;
 import efub.session.community.account.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
