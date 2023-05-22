@@ -1,6 +1,7 @@
 package efub.session.community.account.service;
 
 import efub.session.community.account.domain.Member;
+import efub.session.community.account.dto.MemberInfoRequestDto;
 import efub.session.community.account.dto.MemberUpdateRequestDto;
 import efub.session.community.account.dto.SignUpRequestDto;
 import efub.session.community.account.repository.MemberRepository;
@@ -37,7 +38,7 @@ public class MemberService {
 
     public Long update(Long memberId, MemberUpdateRequestDto requestDto){
         Member member = findMemberById(memberId);
-        member.updateMember(requestDto.getNickname());
+        member.updateMember(requestDto.getMemberId());
         return memberId;
     }
 

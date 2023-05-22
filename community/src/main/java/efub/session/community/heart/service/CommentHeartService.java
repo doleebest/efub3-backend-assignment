@@ -1,5 +1,6 @@
 package efub.session.community.heart.service;
 
+import efub.session.community.account.dto.MemberInfoRequestDto;
 import efub.session.community.comment.domain.Comment;
 import efub.session.community.heart.domain.CommentHeart;
 import efub.session.community.comment.repository.CommentHeartRepository;
@@ -24,7 +25,7 @@ public class CommentHeartService {
 
 
     // 댓글 좋아요 생성
-    public void create(Long commmentId, MemberUpdateRequestDto requestDto){
+    public void create(Long commmentId, MemberInfoRequestDto requestDto){
         Member member=memberService.findMemberById(requestDto.getMemberId());
         Comment comment=commentService.findCommentById(commmentId);
         if(isExistsByWriterAndComment(member,comment)){
