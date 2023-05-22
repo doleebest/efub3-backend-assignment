@@ -38,7 +38,7 @@ public class MemberService {
 
     public Long update(Long memberId, MemberUpdateRequestDto requestDto){
         Member member = findMemberById(memberId);
-        member.updateMember(requestDto.getMemberId());
+        member.updateMember(requestDto.getNickname());
         return memberId;
     }
 

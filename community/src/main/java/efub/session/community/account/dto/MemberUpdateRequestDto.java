@@ -12,11 +12,11 @@ import javax.validation.constraints.NotBlank;
 public class MemberUpdateRequestDto {
 
     @NotBlank(message = "작성자는 필수값입니다.")
-    private Long memberId;
+    private String nickname;
 
     @Builder
     public MemberUpdateRequestDto(Long memberId){
-        this.memberId = getMemberId();
+        this.nickname = getNickname();
     }
 
 }
