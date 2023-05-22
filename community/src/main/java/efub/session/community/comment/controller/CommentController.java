@@ -1,5 +1,6 @@
 package efub.session.community.comment.controller;
 
+import efub.session.community.account.dto.MemberInfoRequestDto;
 import efub.session.community.account.dto.MemberUpdateRequestDto;
 import efub.session.community.comment.domain.Comment;
 import efub.session.community.comment.dto.CommentModifyRequestDto;
@@ -48,7 +49,7 @@ public class CommentController {
     //댓글에 좋아요 생성
     @PostMapping("/hearts")
     @ResponseStatus(value = HttpStatus.CREATED)
-    public String createCommentHeart(@PathVariable final Long commentId, @RequestBody final MemberUpdateRequestDto requestDto){
+    public String createCommentHeart(@PathVariable final Long commentId, @RequestBody final MemberInfoRequestDto requestDto){
         commentHeartService.create(commentId,requestDto);
         return "좋아요를 눌렀습니다.";
     }
