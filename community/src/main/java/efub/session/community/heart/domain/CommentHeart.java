@@ -4,10 +4,9 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import efub.session.community.comment.domain.Comment;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.xml.stream.events.Comment;
 
 @Entity
 @Getter

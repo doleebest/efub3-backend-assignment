@@ -25,9 +25,9 @@ public class CommentHeartService {
 
 
     // 댓글 좋아요 생성
-    public void create(Long commmentId, MemberInfoRequestDto requestDto){
+    public void create(Long commentId, MemberInfoRequestDto requestDto){
         Member member=memberService.findMemberById(requestDto.getMemberId());
-        Comment comment=commentService.findCommentById(commmentId);
+        Comment comment=commentService.findCommentById(commentId);
         if(isExistsByWriterAndComment(member,comment)){
             throw new RuntimeException("이미 좋아요를 눌렀습니다.");
         }

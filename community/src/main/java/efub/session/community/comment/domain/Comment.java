@@ -1,6 +1,6 @@
 package efub.session.community.comment.domain;
 
-import efub.session.community.account.domain.Member;
+;import efub.session.community.account.domain.Member;
 import efub.session.community.global.entity.BaseTimeEntity;
 import efub.session.community.heart.domain.CommentHeart;
 import efub.session.community.post.domain.Post;
