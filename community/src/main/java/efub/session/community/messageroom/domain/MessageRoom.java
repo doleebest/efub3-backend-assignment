@@ -1,6 +1,6 @@
 package efub.session.community.messageroom.domain;
 
-import efub.session.community.global.BaseTimeEntity;
+import efub.session.community.global.entity.BaseTimeEntity;
 import efub.session.community.account.domain.Member;
 import efub.session.community.message.domain.Message;
 import efub.session.community.post.domain.Post;

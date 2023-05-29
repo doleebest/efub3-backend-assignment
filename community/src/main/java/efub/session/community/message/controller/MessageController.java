@@ -13,3 +13,4 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/messages")
 public class MessageController {
     private final MessageService messageService;
+}

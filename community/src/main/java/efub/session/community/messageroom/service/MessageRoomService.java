@@ -102,9 +102,5 @@ public class MessageRoomService {
         else{
             return messageRoom.getStarter().getMemberId();
         }
-
-
     }
-
 }
-  6 changes: 6 additions & 0 deletions6

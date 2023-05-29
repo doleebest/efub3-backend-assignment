@@ -1,6 +1,6 @@
 package efub.session.community.message.domain;
 
-import efub.session.community.global.BaseTimeEntity;
+import efub.session.community.global.entity.BaseTimeEntity;
 import efub.session.community.account.domain.Member;
 import efub.session.community.messageroom.domain.MessageRoom;
 import lombok.AccessLevel;
