@@ -33,7 +33,25 @@ class CommentControllerTest {
 
         // then
         assertThat(comment.getContent()).isEqualTo(content);
-
     }
+
+    // failed : 존재하지 않는 댓글을 수정한다.
+    @Test
+    public void updateComment_GivenInvalidCommentId_ReturnNullPointerException(){
+        // given
+        Long INVALID_COMMENT_ID= 10L;
+        Long memberId = 1L;
+        String content = "test";
+
+        // when , then
+        CommentModifyRequestDto requestDto = new CommentModifyRequestDto(memberId,content);
+        Comment comment = commentRepository.findCommentByCommentId(INVALID_COMMENT_ID);
+
+        NullPointerException e = assertThrows(NullPointerException.class ,
+                ()-> comment.updateComment(requestDto));
+        assertThat(e.getMessage()).isEqualTo(null);
+    }
+
+
 
 }
