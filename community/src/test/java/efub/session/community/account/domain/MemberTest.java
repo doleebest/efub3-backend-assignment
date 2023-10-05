@@ -52,4 +52,19 @@ class MemberTest {
             assertThat(e.getMessage()).isEqualTo(null);
         }
 
+        // fail : 계정의 memberId을 null로 변경하려는 경우
+        @Test
+        public void updateMember_GivenNullNickname_ReturnIllegalArgumentException(){
+            // given
+            final Long VALID_MEMBER_ID = 5L;
+
+            // when, then
+            Member member = memberRepository.findByMemberId(VALID_MEMBER_ID);
+            // 1) 사용자 id를 null로 변경하려고 시도한다.
+            // 2) 이로 인해 'member.updateMember(null)' 호출에서 IllegalArgumentException, 즉 에러가 발생한다.
+            // 3) 이 경우, IllegalArgumentException을 예상하며 해당 예외가 발생하는지 test
+            IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                    () -> member.updateMember(null));
+        }
+
 }

@@ -64,9 +64,9 @@ class BoardTest {
         // when , then
         Board board = boardRepository.findByBoardId(VALID_BOARD_ID);
 
-        // 게시판 소유자를 null로 변경하려고 시도한다.
-        // 이로 인해 'board.updateBoard(null)' 호출에서 IllegalArgumentException, 즉 에러가 발생한다.
-        // 이 경우, IllegalArgumentException을 예상하며 해당 예외가 발생하는지 test
+        // 1) 게시판 소유자를 null로 변경하려고 시도한다.
+        // 2) 이로 인해 'board.updateBoard(null)' 호출에서 IllegalArgumentException, 즉 에러가 발생한다.
+        // 3) 이 경우, IllegalArgumentException을 예상하며 해당 예외가 발생하는지 test
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
                 () -> board.updateBoard(null));
     }
