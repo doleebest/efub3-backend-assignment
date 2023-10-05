@@ -12,4 +12,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     Optional<Post> findByPostIdAndWriter_MemberId(Long postId, Long memberId); // POST로 접근하는 매개체, pk 타입이 long
 
     List<Post> findAllByWriter(Member member);
+
+    Post findPostByPostId(Long PostId);
 }

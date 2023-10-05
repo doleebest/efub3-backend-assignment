@@ -20,7 +20,7 @@ class MemberTest {
         private MemberRepository memberRepository;
 
 
-        // 성공 시 Member 객체가 생성된다.
+        // success ; Member 객체가 생성된다.
         @Test
         public void testMember(){
             // given
@@ -38,7 +38,7 @@ class MemberTest {
         }
 
 
-        // 실패 시 존재하지 않는 계정의 nickname을 변경한다.
+        // fail ; 존재하지 않는 계정의 nickname을 변경한다.
         @Test
         public void updateNickname_givenInvalidMember_ReturnNullPointerException(){
             // given
