@@ -37,16 +37,31 @@ class PostTest {
     // fail : 존재하지 않는 게시글을 수정한다.
     @Test
     public void updatePost_GivenInvalidPost_ReturnNullPointerException() {
-        /* given */
+        // given
         final Long INVALID_POST_ID = 20L;
         Long memberId = 3L;
         String content = "test";
 
-        /* when , then */
+        // when , then
         PostModifyRequestDto requestDto = new PostModifyRequestDto(memberId, content);
         Post post = postRepository.findPostByPostId(INVALID_POST_ID);
         NullPointerException e = assertThrows(NullPointerException.class,
                 () -> post.updatePost(requestDto));
         assertThat(e.getMessage()).isEqualTo(null);
+    }
+
+    // fail : 게시글의 내용을 null 로 수정한다.
+    @Test
+    public void updatePost_GivenNullContent_ReturnNull(){
+        // given
+        Long postId= 6L;
+        Long memberId = 3L;
+        String content = null;
+
+        // when , then
+        PostModifyRequestDto requestDto = new PostModifyRequestDto(memberId,content);
+        Post post = postRepository.findPostByPostId(postId);
+        post.updatePost(requestDto);
+        assertThat(post.getContent()).isNull();
     }
 }
