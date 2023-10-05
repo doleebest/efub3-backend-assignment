@@ -11,4 +11,6 @@ public interface MemberRepository extends JpaRepository <Member, Long>{
 
     Boolean existsByMemberId(Long memberId);
     Member findByMemberId(Long memberId); // 아이디로 계정을 조회
+
+    Member findMemberByMemberId(Long memberId);
 }

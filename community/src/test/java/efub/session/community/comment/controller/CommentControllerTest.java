@@ -48,7 +48,7 @@ class CommentControllerTest {
         Comment comment = commentRepository.findCommentByCommentId(INVALID_COMMENT_ID);
 
         NullPointerException e = assertThrows(NullPointerException.class ,
-                ()-> comment.updateComment(requestDto));
+                ()-> comment.updateComment(String.valueOf(requestDto)));
         assertThat(e.getMessage()).isEqualTo(null);
     }
 
