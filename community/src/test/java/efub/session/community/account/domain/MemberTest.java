@@ -41,11 +41,11 @@ class MemberTest {
         // 실패 시 존재하지 않는 계정의 nickname을 변경한다.
         @Test
         public void updateNickname_givenInvalidMember_ReturnNullPointerException(){
-            /* given */
+            // given
             final Long INVALID_MEMBER_ID = 10L;
             String nickname = "newNickname";
 
-            /* when, then */
+            // when, then
             Member member = memberRepository.findByMemberId(INVALID_MEMBER_ID);
             NullPointerException e = assertThrows(NullPointerException.class ,
                     ()-> member.updateMember(nickname));
