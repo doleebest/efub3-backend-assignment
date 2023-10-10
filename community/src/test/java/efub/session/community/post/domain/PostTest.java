@@ -1,6 +1,6 @@
 package efub.session.community.post.domain;
 
-import efub.session.community.account.dto.PostModifyRequestDto;
+import efub.session.community.post.dto.PostModifyRequestDto;
 import efub.session.community.post.repository.PostRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

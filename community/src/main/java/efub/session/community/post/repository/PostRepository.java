@@ -1,7 +1,6 @@
 package efub.session.community.post.repository;
 
 import efub.session.community.account.domain.Member;
-import efub.session.community.account.dto.PostModifyRequestDto;
 import efub.session.community.post.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 

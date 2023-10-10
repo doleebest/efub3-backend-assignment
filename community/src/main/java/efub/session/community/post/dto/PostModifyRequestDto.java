@@ -12,6 +12,7 @@ public class PostModifyRequestDto {
 
     private String content;
     private Long memberId;
+    private String title;
 
     @Builder
     public PostModifyRequestDto (String content) {
@@ -41,4 +42,7 @@ public class PostModifyRequestDto {
     }
 
 
+    public String getTitle() {
+        return title;
+    }
 }
