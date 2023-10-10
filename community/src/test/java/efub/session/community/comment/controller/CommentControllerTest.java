@@ -19,6 +19,7 @@ class CommentControllerTest {
     @Autowired
     public CommentRepository commentRepository;
 
+    // success : comment를 수정한다.
     @Test
     public void updateCommentTest(){
         //given
