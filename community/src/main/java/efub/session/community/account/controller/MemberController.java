@@ -17,7 +17,7 @@ import javax.validation.Valid;
 public class MemberController {
     private final MemberService memberService;
 
-    @PostMapping
+    @PostMapping("/{memberId}/signUp")
     @ResponseStatus(value = HttpStatus.CREATED)
     public MemberResponseDto signUp(@RequestBody @Valid SignUpRequestDto requestDto){
         Long id = memberService.signUp(requestDto);
