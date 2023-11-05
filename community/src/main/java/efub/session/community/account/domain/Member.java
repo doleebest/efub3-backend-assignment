@@ -53,4 +53,8 @@ public class Member {
     public void withdrawMember(){
         this.status = MemberStatus.UNREGISTERED;
     }
+
+    public void setId(long l) {
+        this.memberId = memberId;
+    }
 }
