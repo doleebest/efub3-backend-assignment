@@ -25,5 +25,4 @@ class MemberControllerTest{
     public void init() {
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
     }
-
 }
