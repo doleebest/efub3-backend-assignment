@@ -16,7 +16,7 @@ import java.util.List;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Comment extends BaseTimeEntity {
 
     @Id // 이 필드가 이 엔티티의 프라이머리 키이다
