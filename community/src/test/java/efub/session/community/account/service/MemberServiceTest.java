@@ -18,7 +18,7 @@ class MemberServiceTest {
     @Mock
     private MemberRepository memberRepository;
 
-    @org.junit.Test
+    @Test
     void signUpSuccess() {
         when(memberRepository.existsByEmail(anyString())).thenReturn(false);
 
@@ -30,7 +30,7 @@ class MemberServiceTest {
     void signUpFailure() {
         when(memberRepository.existsByEmail(anyString())).thenReturn(true);
 
-        memberService.signup("test@email.com", "password", "univ", "nickname", "studentId");
+        memberService.signup("sj@ewhain.net", "sj0000", "ewha", "soso", "212121");
     }
 
 }
