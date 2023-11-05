@@ -18,7 +18,7 @@ class MemberServiceTest {
     @Mock
     private MemberRepository memberRepository;
 
-    @org.junit.Test
+    @Test
     void signUpSuccess() {
         when(memberRepository.existsByEmail(anyString())).thenReturn(false);
 
